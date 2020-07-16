@@ -29,10 +29,22 @@ This will create a jar file that is accessible as a library for your projects.
 
 Installing the JAR file to your maven project is as follows (in your project directory needing to use metrics):
 ```
-mvn install:install-file -Dfile=<path-to-metrics-jar-generated-above> -DgroupId=com.ivansanchez -DMetrics -Dversion=1.0-SNAPSHOT -Dpackage=jar -DgeneratePom=true
+mvn install:install-file -Dfile=<path-to-metrics-jar-generated-above> -DgroupId=com.ivansanchez -DartifactId=Metrics -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true
 ```
 
-
+Alternatively, after building the JAR file, a developer can also copy the jar file to a folder in the project they want to use it in.
+The POM.xml file can be updated to reflect the local JAR availability.
+The example below moved the JAR file to a file directly at the project root called "lib".:
+```
+<dependency>
+    <groupId>com.ivansanchez</groupId>
+    <artifactId>Metrics</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/lib/Metrics-1.0-SNAPSHOT-jar-with-dependencies.jar</systemPath>
+</dependency>
+```
+-------------------------
 #### Interaction
 A metrics instance can be requested using the following command:      
 
