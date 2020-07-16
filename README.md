@@ -1,4 +1,5 @@
 # Metrics
+## Status: ![Java CI with Maven](https://github.com/sandrum/Metrics/workflows/Java%20CI%20with%20Maven/badge.svg)
 ### Java Exercise
 
 ##### Aggregate metrics for a particular metric name.
