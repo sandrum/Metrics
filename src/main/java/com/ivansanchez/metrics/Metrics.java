@@ -113,6 +113,9 @@ public class Metrics {
      * @return - map of metrics values tied to the name of the metric and the total count of that metric.
      */
     public Map<String, Long> getMetricsDataWithTime(final long seconds) {
+        if(seconds > timeToLive) {
+            return getMetricsDataWithNameAndTime("", timeToLive);
+        }
         return getMetricsDataWithNameAndTime("", seconds);
     }
 
