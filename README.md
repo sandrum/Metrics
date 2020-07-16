@@ -1,5 +1,5 @@
 # Metrics
-### Java exercise
+### Java Exercise
 
 ##### Aggregate metrics for a particular metric name.
 
@@ -12,14 +12,19 @@ Since the project does not come with a database, the metrics are kept in memory 
 
 How to use:
 To run unit tests via command line, use: 
- ```
+```
   mvn test
-  ```
+```
+
+To run unit tests/integration tests via command line, use: 
+```
+  mvn clean verify
+```
 
 To build the package via command line, use: 
- ```
+```
   mvn package
-  ```
+```
 This will create a jar file that is accessible as a library for your projects.
 
 Installing the JAR file to your maven project is as follows (in your project directory needing to use metrics):
@@ -60,3 +65,8 @@ The instance has the following capabilities:
 ```     
  Map<String,Long> metricsData = metrics.getMetricsData("homepage access", 200);
 ```   
+##### Future capabilities.
+
+* Annotation based metrics
+* Latency metrics
+

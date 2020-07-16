@@ -101,6 +101,18 @@ public class MetricsItemTest {
         Assert.assertEquals(res2, res1);
     }
 
+    @Test
+    public void metricFailsBecauseNoNameSpecified(){
+        boolean success = metrics.putMetricData("");
+        Assert.assertFalse(success);
+    }
+
+    @Test
+    public void metricFailsBecauseNoNameSpecifiedWithCount(){
+        boolean success = metrics.putMetricData("", 2);
+        Assert.assertFalse(success);
+    }
+
     private void addMetricsForTest1() {
         metrics.putMetricData(testString1);
         metrics.putMetricData(testString2);

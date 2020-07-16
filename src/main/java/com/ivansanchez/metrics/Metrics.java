@@ -24,7 +24,6 @@ public class Metrics {
     private static Metrics metrics = null;
 
     /** The service's name. **/
-    @Setter
     private String serviceName;
 
     /** Time for metrics to live. **/
