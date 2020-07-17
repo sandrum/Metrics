@@ -35,7 +35,7 @@ mvn install:install-file -Dfile=<path-to-metrics-jar-generated-above> -DgroupId=
 
 Alternatively, after building the JAR file, a developer can also copy the jar file to a folder in the project they want to use it in.
 The POM.xml file can be updated to reflect the local JAR availability.
-The example below moved the JAR file to a file directly at the project root called "lib".:
+For the example below, the jar file was manually re-located to a directory at the project root called "lib".:
 ```
 <dependency>
     <groupId>com.ivansanchez</groupId>
@@ -72,11 +72,11 @@ The instance has the following capabilities:
 ``` 
 * getMetricsDataWithTime() --  retrieve ALL aggregated metrics data with a specified limit (up to the maximum)   
 ```     
- Map<String,Long> metricsData = metrics.getMetricsData(200);
+ Map<String,Long> metricsData = metrics.getMetricsDataWithTime(200);
 ```                                                 
 * getMetricsDataWithNameAndTime() -- retrieve aggregated metrics based on the name of the metric specified and the time.                                                                          
 ```     
- Map<String,Long> metricsData = metrics.getMetricsData("homepage access", 200);
+ Map<String,Long> metricsData = metrics.getMetricsDataWithNameAndTime("homepage access", 200);
 ```   
 ##### Future capabilities.
 
